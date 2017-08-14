@@ -1,0 +1,10 @@
+<h1>Create a New Language</h1>
+
+<%= form_for(@language) do |f| %>
+  <%= f.label :language_name %><br>
+  <%= f.text_field :name %><br>
+  <br>
+
+  <%= f.submit %>
+
+<% end %>
