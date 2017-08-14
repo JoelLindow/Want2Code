@@ -21,9 +21,24 @@ class CodersController < ApplicationController
     end
   end
 
+  def edit
+    @coder = Coder.find(params[:id])
+  end
+
+  def update
+    @coder = Coder.find(params[:id])
+    @coder.update(coder_params)
+    if @coder.save
+      flash[:success] = "#{@coder.first_name} updated!"
+      redirect_to coder_path(@coder)
+    else
+      render :edit
+    end
+  end
+
   private
 
   def coder_params
-        params.require(:coder).permit(:first_name, :last_name, :about, :looking_for, :img_url)
+    params.require(:coder).permit(:first_name, :last_name, :about, :looking_for, :img_url)
   end
 end
