@@ -2,4 +2,5 @@
 
 <% @languages.each do |language| %>
 <h4><%= language.name %></h4>
+<%= link_to "Delete Language", language_path(language), method: :delete %>
 <% end  %>

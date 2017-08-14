@@ -17,6 +17,12 @@ class LanguagesController < ApplicationController
     end
   end
 
+  def destroy
+    language = Language.find(params[:id])
+    language.destroy
+    redirect_to languages_path
+    flash[:success] = "Language has been deleted from the database!"
+  end
 
   private
 
