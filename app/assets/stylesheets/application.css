@@ -18,6 +18,10 @@
   margin-left: 15px;
 }
 
+.navbar {
+  border-radius: 0px;
+}
+
 .navbar-brand {
   font-size: 40px;
   letter-spacing: -5px;

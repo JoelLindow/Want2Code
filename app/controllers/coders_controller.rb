@@ -7,4 +7,23 @@ class CodersController < ApplicationController
   def show
     @coder = Coder.find(params[:id])
   end
+
+  def new
+    @coder = Coder.new
+  end
+
+  def create
+    @coder = Coder.new(coder_params)
+    if @coder.save
+      redirect_to coder_path(@coder)
+    else
+      render :new
+    end
+  end
+
+  private
+
+  def coder_params
+        params.require(:coder).permit(:first_name, :last_name, :about, :looking_for, :img_url)
+  end
 end

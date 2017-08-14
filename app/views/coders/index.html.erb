@@ -1,5 +1,9 @@
 <h3>ALL CODERS</h3>
 <% @coders.each do |coder| %>
- <img src="<%= coder.img_url %>" alt="Coder Image" height="42" width="42">
-<%= coder.first_name %> <%= coder.last_name %><br>
+<div class="row">
+  <div class="col-md-2">
+    <img src="<%= coder.img_url %>" alt="Coder Image" height="100" width="100"><br>
+    <h4><a href="/coders/<%= coder.id %>"><%= coder.first_name %> <%= coder.last_name %></a></h4>
+  </div>
 <% end %>
+</div>
