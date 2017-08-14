@@ -13,3 +13,12 @@
  *= require_tree .
  *= require_self
  */
+
+.pages {
+  margin-left: 15px;
+}
+
+.navbar-brand {
+  font-size: 40px;
+  letter-spacing: -5px;
+}
