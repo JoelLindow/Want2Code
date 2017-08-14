@@ -1,9 +1,12 @@
 <h3>ALL CODERS</h3>
-<% @coders.each do |coder| %>
+<%= link_to "Add New Coder to Database", new_coder_path %>
 <div class="row">
-  <div class="col-md-2">
-    <img src="<%= coder.img_url %>" alt="Coder Image" height="100" width="100"><br>
-    <h4><a href="/coders/<%= coder.id %>"><%= coder.first_name %> <%= coder.last_name %></a></h4>
+<% @coders.each do |coder| %>
+  <div class="col-md-2 index-card">
+    <div class="index_card">
+    <img src="<%= coder.img_url %>" alt="Coder Image" class="code_index_img"><br>
+    <h5><a href="/coders/<%= coder.id %>"><%= coder.first_name %> <br> <%= coder.last_name %></a></h5>
+  </div>
   </div>
 <% end %>
 </div>

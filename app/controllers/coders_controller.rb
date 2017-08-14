@@ -36,6 +36,13 @@ class CodersController < ApplicationController
     end
   end
 
+  def destroy
+    coder = Coder.find(params[:id])
+    coder.destroy
+    redirect_to coders_path
+    flash[:success] = "Coder has been deleted from the database!"
+  end
+
   private
 
   def coder_params

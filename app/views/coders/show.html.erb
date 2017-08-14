@@ -5,4 +5,7 @@
 <%= @coder.about %><br>
 
 <h4>What <%= @coder.first_name %> is looking for</h4>
-<%= @coder.looking_for %>
+<%= @coder.looking_for %><br>
+<br>
+
+<%= link_to "Edit Coder Information", edit_coder_path(@coder) %>
