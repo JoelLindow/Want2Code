@@ -1,3 +1,4 @@
+<%= link_to "Edit Coder Information", edit_coder_path(@coder) %><br>
 <img src="<%= @coder.img_url %>" alt="Coder Image" height="150" width="150">
 
 <h1><%= @coder.first_name %> <%= @coder.last_name %></h1>
@@ -6,6 +7,11 @@
 
 <h4>What <%= @coder.first_name %> is looking for</h4>
 <%= @coder.looking_for %><br>
-<br>
 
-<%= link_to "Edit Coder Information", edit_coder_path(@coder) %>
+
+<h4>Skills</h4>
+<h5>Language / Skill Level</h5>
+<% @skillsets.each do |skillset| %>
+<%= skillset.language.name %> / <%= skillset.skill_level %>
+<br>
+<% end %>

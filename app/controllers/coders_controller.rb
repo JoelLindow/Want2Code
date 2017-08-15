@@ -6,6 +6,7 @@ class CodersController < ApplicationController
 
   def show
     @coder = Coder.find(params[:id])
+    @skillsets = @coder.skillsets.all
   end
 
   def new
